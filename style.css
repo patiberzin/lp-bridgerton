@@ -1,0 +1,695 @@
+@import url("colors.css");
+
+/* Geral + reuso */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--cor-apoio);
+}
+
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn,
+.btn-next,
+.btn-buy {
+  padding: 15px 30px;
+  background: linear-gradient(to right, #003E2F, #00A47C);
+  color: var(--cor-branco);
+  font-family: "Inter", sans-serif;
+  font-size: 24px; 
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn-before {
+  padding: 15px 30px;
+  background: var(--cor-cinza);
+  color: var(--cor-principal);
+  font-family: "Inter", sans-serif;
+  font-size: 24px; 
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.detalhe-flor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+}
+
+/*Menu*/
+
+.container-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: var(--cor-principal);
+    border-bottom: 4px solid var(--cor-dourado); 
+}
+
+.container-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.container-nav li a {
+    
+    font-size: 1.6rem;
+    color: var(--cor-branco);
+}
+
+/*Header*/
+
+.container-header {
+  position: relative;
+  width: 100%;
+  height: 60vh; 
+  overflow: hidden;
+  border-bottom: 4px solid var(--cor-dourado); 
+}
+
+.container-header img {
+  display: block;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center center; 
+}
+
+/* Overlay preto com blur */
+.container-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* preto com transparência */
+  backdrop-filter: blur(4px); /* aplica o blur */
+  z-index: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 200px;
+  margin: 30px;
+  color: white;
+  font-size: 2em; 
+  font-weight: bold;
+  font-family: "Inter", sans-serif; 
+  line-height: 1.4;
+  max-width: 40%; 
+  padding: 10px; 
+  z-index: 2; /* fica acima da camada de blur */
+}
+
+
+/*Box*/
+
+.container-box {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-box h1 {
+    font-family: "Carattere", cursive;
+    font-size: 6rem;
+    text-align: center;
+    margin: 60px auto;
+    color: var(--cor-principal);
+}
+
+.container-books {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/*Para a borda dupla funcionar*/
+.container-border {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  /* Primeira borda (colada na imagem) */
+  .img-book {
+    display: block;
+    border-bottom: 3px solid var(--cor-dourado);
+    border-right: 3px solid var(--cor-dourado);
+    padding: 20px;
+  }
+  
+  /* Segunda borda (mais afastada) */
+  .container-border::after {
+    content: "";
+    position: absolute;
+    bottom: -9px; /* 3px da borda + 6px de espaço */
+    right: -9px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid var(--cor-dourado);
+    border-right: 3px solid var(--cor-dourado);
+    pointer-events: none;
+    z-index: -1; /* Para ficar atrás da imagem */
+  }
+
+  .price {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+  }
+
+  .text-price h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 20px;
+    color: var(--cor-black);
+  }
+
+  .text-price p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 20px;
+    color: var(--cor-black);
+  }
+
+  .container-text {
+    margin-left: 30px;
+  }
+
+  .container-text li {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto;
+    color: var(--cor-black);
+  }
+
+  .price li:first-child {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 20px;
+    color: var(--cor-black);
+  }
+
+  .price li:nth-child(2) {
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    color: var(--cor-principal);
+  }
+
+  .price li:nth-child(3) {
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 20px;
+    color: var(--cor-black);
+    padding: 3px;
+  }
+
+/* Feedbacks */
+.container-feedbacks {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px 0 60px 0;
+  background-color: var(--cor-secundaria);
+  border-top: 4px solid var(--cor-dourado); 
+  border-bottom: 4px solid var(--cor-dourado); 
+}
+
+.container-feedbacks h2 {
+  font-family: "Carattere", cursive;
+  font-size: 6rem;
+  text-align: center;
+  margin: 60px auto;
+  color: var(--cor-principal);
+}
+
+.container-cite-group {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.cite-card {
+  padding: 40px 30px;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  border-bottom: 3px solid var(--cor-dourado);
+  border-right: 3px solid var(--cor-dourado);
+}
+
+.cite-card .quote-icon {
+  font-family: "Carattere", cursive;
+  font-size: 10rem;
+  line-height: 0.5;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.cite-card .cite-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.cite-card footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cite-card .stars-image {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.cite-card .author-name {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*Formulário*/
+
+.progress-dots {
+  display: flex;
+  gap: 12px; /* espaço entre as bolinhas */
+  justify-content: center;
+  margin: 20px 0 60px 0;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background-color: #D9D9D9; /* cor inativa */
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #00A47C; /* cor ativa */
+}
+
+
+.container-request h2 {
+  font-family: "Carattere", cursive;
+  font-size: 6rem;
+  text-align: center;
+  margin: 60px auto;
+  color: var(--cor-principal);
+}
+
+.container-city,
+.container-forms {
+  display: flex;
+}
+
+.container-num {
+  display: flex;
+}
+
+.form-field label,
+.form-field2 label {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.form-field input,
+.form-field2 input {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--cor-principal);
+}
+
+/* Centralizar a partir do h2 */
+.container-forms {
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+/* Estilo base dos inputs inativos */
+.form-field input {
+  width: 460px;
+  padding: 20px 40px;
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Quando ativo (JS vai aplicar essa classe) */
+.form-field input.active,
+.form-field2 input.active {
+  background-color: var(--cor-branco);
+  border: 3px solid var(--cor-dourado);
+}
+
+.little-input {
+  width: 80px !important;
+  padding: 20px 10px !important;
+  margin-right: 20px !important;
+  box-sizing: border-box; 
+}
+
+.little-input2 {
+  width: 360px !important;
+}
+
+/*Segundo formulário*/
+
+/* Mostrar formulário ativo */
+.active {
+  display: block !important;
+}
+
+  /* Oculta por padrão */
+  #first-form, #second-form {
+    display: none;
+  }
+
+  /* Exibe o formulário ativo */
+  #first-form.active, #second-form.active {
+    display: block;
+  }
+
+.container-pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-pay ul {
+  display: flex;
+  gap: 16px;
+}
+
+.container-pay ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--cor-dourado);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.container-pay ul li:hover {
+  border: 4px solid var(--cor-botao);
+}
+
+.container-pay ul li.selected {
+  border: 4px solid var(--cor-botao);
+}
+
+.container-form2 {
+  width: fit-content; /* ou uma largura fixa se preferir, tipo 80% */
+  margin: 40px auto; /* centraliza horizontalmente */
+}
+
+.form-field2 input {
+  width: 900px;
+  padding: 20px 40px;
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.form-field input.active {
+  background-color: var(--cor-branco);
+  border: 3px solid var(--cor-dourado);
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+  width: fit-content; /* ou uma largura fixa se preferir, tipo 80% */
+  margin: 40px auto; /* centraliza horizontalmente */
+}
+
+/*Footer*/
+
+.container-footer {
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--cor-branco);
+  background-color: var(--cor-principal);
+  border-top: 4px solid var(--cor-dourado); 
+}
+
+/*Responsivo*/
+
+/* Responsividade para telas médias */
+
+@media (max-width: 1094px) {
+  .container-books {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overlay-text {
+    left: 5%;
+    max-width: 90%;
+    font-size: 2rem;
+    bottom: 10px;
+  }
+
+  .container-box h1,
+  .container-feedbacks h2,
+  .container-request h2 {
+    font-size: 4rem;
+  }
+
+  .text-price h2,
+  .text-price p,
+  .container-text li,
+  .price li {
+    font-size: 1.6rem;
+  }
+
+  .container-forms,
+  .container-form2 {
+    margin: 16px 60px;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .btn,
+  .btn-next,
+  .btn-buy,
+  .btn-before {
+    font-size: 1.6rem;
+    padding: 1.2rem 2.4rem;
+  }
+
+  .cite-card {
+    max-width: 90%;
+  }
+
+  .cite-card .quote-icon {
+    font-size: 6rem;
+  }
+}
+
+/* Responsividade para telas celulares */
+@media (max-width: 768px) {
+  .container-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centraliza horizontalmente */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .container-menu img {
+    margin: 0 auto;
+  }
+
+  .overlay-text {
+    font-size: 1.6rem;
+  }
+
+  .container-nav {
+    display: flex; /* mantém os itens em linha */
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .container-nav li a {
+    font-size: 1.4rem;
+  }
+  .container-forms {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.first-form,
+.second-form {
+    width: 100%;
+    min-width: unset;
+    gap: 15px;
+}
+
+.label-input input {
+    max-width: none;
+}
+
+.container-city {
+    gap: 15px;
+    align-items: stretch; /* Garante que os campos empilhados ocupem a largura total */
+}
+
+.container-city .label-input {
+    width: 100%; /* Cada label-input ocupa 100% da largura de container-city */
+    min-width: unset;
+}
+
+.container-city .label-input:first-child input,
+.container-city .label-input:last-child input {
+    max-width: none; /* Remove qualquer max-width fixo */
+}
+.label-input input:not(.container-city input) {
+  max-width: 300px; /* Aplica o max-width de 300px para os campos maiores em telas grandes */
+}
+.container-forms {
+  flex-direction: column;
+  align-items: center; /* Centraliza os formulários individualmente */
+  gap: 15px;
+  width: 90%; /* Ajusta a largura para ocupar a maior parte da tela */
+  margin: 0 auto; /* Centraliza o container-forms horizontalmente */
+  padding: 15px; /* Adiciona um padding interno para não ficar muito grudado nas bordas */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.first-form,
+.second-form {
+  width: 100%; /* Garante que os formulários internos ocupem a largura total do container-forms */
+  min-width: unset;
+  gap: 15px;
+  align-items: center; /* Centraliza os itens dentro de first-form e second-form */
+}
+
+/* Garantindo que os inputs menores se ajustem em mobile */
+.little-input,
+.little-input2 {
+  width: 100% !important; /* Ocupa 100% da largura do seu pai (form-field) */
+  max-width: 300px !important; /* Mantém a largura máxima dos outros campos */
+  margin: 0 auto; /* Centraliza o input */
+}
+
+.form-field { /* Adicionado: Garante que os campos individuais fiquem centralizados */
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 300px; /* Limita a largura dos campos para não ficarem muito grandes em telas menores */
+  margin: 0 auto; /* Centraliza o form-field */
+  text-align: center; /* Centraliza o texto do label (opcional) */
+}
+
+.form-field label { /* Adicionado: Garante que o label esteja alinhado à esquerda */
+  width: 100%;
+  text-align: left;
+  display: block; /* Garante que o label ocupe sua própria linha */
+  margin-bottom: 5px; /* Espaço entre o label e o input */
+}
+
+.form-field input { /* Adicionado: Garante que os inputs se ajustem e estejam centralizados */
+  width: 100%; /* Input ocupa 100% do form-field */
+  max-width: 300px; /* Mantém a largura máxima dos inputs */
+  display: block; /* Garante que o input ocupe sua própria linha */
+  margin: 0 auto; /* Centraliza o input */
+}
+
+.label-input input { /* Removido: Esta classe parece não existir no seu HTML fornecido, ou está incorreta */
+  /* max-width: none; */
+}
+
+.container-city {
+  flex-direction: column; /* Garante que os campos de número e cidade/estado empilhem */
+  gap: 15px;
+  width: 100%; /* Ocupa a largura total do seu pai */
+  align-items: center; /* Centraliza os itens de container-city */
+}
+
+.container-city .form-field { /* Alterado de .label-input para .form-field */
+  width: 100%; /* Cada campo dentro de container-city ocupa 100% da largura */
+  min-width: unset;
+  max-width: 300px; /* Limita a largura para cada campo individual dentro de container-city */
+  margin: 0 auto; /* Centraliza o campo */
+}
+
+.container-city .form-field input { /* Alterado de .label-input input para .form-field input */
+  width: 100%; /* Input ocupa 100% do seu form-field pai */
+  max-width: 300px; /* Garante que o input não se espalhe demais */
+}
+
+/* Removido: Esta regra pode estar causando conflito */
+/* .label-input input:not(.container-city input) {
+  max-width: 300px;
+} */
+
+.container-btn {
+  width: 90%; /* Ajusta a largura para o botão também */
+  margin: 20px auto; /* Centraliza o botão e adiciona margem */
+  text-align: center; /* Centraliza o texto do link se o link for inline */
+}
+
+.btn-next {
+  width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+  max-width: 300px; /* Limita a largura do botão para não ficar muito largo */
+  display: block; /* Garante que o botão ocupe sua própria linha para aplicar margin: auto */
+  margin: 0 auto; /* Centraliza o botão */
+}
+
+}
