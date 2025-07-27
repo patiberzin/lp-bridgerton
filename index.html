@@ -67,7 +67,8 @@
         <div class="container-cite-group"> <blockquote class="cite-card container-border"> <i class="quote-icon">“</i> <p class="cite-text">Leitura fácil e encantadora, os personagens e enredos são diferentes das séries.</p>
                 <footer>
                     <img src="five-stars.png" alt="cinco estrelas" class="stars-image">
-                    <cite class="author-name">Ligia Pereira</cite> </footer>
+                    <cite class="author-name">Ligia Pereira</cite> 
+                </footer>
             </blockquote>
             <blockquote class="cite-card container-border">
                 <i class="quote-icon">“</i>
@@ -97,46 +98,22 @@
       <div class="dot"></div>
     </div>
   
-    <section class="container-forms">
+    <section class="container-form">
     <div class="first-form">
         <form action="">
-            <div class="form-field">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-              </div>
               <div class="form-field">
-                <label for="email">E-mail:</label>
-                <input type="text" id="email" name="email" required>
-              </div>
+                <label for="nomeSobrenome">Nome e Sobrenome:</label>
+                <input type="text" id="nomeSobrenome" name="email" required> </div>
               <div class="form-field wide">
-                <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco" required>
-              </div>
-        </form>
-    </div>
+                <label for="emailUser">E-mail:</label> <input type="email" id="emailUser" name="endereco" placeholder="email@seuemail.com" required> </div>
     
-    <div class="second-form">
-
-        <form action="">
             <div class="form-field">
-                <label for="">Sobrenome:</label>
-                <input type="text">
-            </div>
+                <label for="enderecoComNumero">Endereço com número:</label> <input type="text" id="enderecoComNumero"> </div>
             <div class="form-field">
-                <label for="">Cep:</label>
-                <input type="text">
-            </div>
+                <label for="cep">Cep:</label> <input type="text" id="cep" placeholder="00000-000" required> </div>
 
-            <div class="container-city">
-                <div class="form-field">
-                    <label for="">Número:</label>
-                    <input type="text" class="little-input">
-                </div>
-                <div class="form-field">
-                    <label for="">Cidade/Estado:</label>
-                    <input type="text" class="little-input2">
-                </div>
-            </div>
+            <div class="form-field">
+                <label for="cidadeEstado">Cidade/estado:</label> <input type="text" id="cidadeEstado" required> </div>
         </form>
 
     </div>
@@ -148,8 +125,6 @@
 </div>
   
 
-<!-- Segundo formulário -->
-
 <section class="next-form" id="second-form">
     <div class="container-request">
         <h2>Modo de pagamento</h2>
@@ -158,56 +133,57 @@
             <div class="dot active"></div>
         </div>
     </div>
-
+    
     <div class="container-pay">
         <ul>
-            <li><img src="icone-card.png" alt="cartao"></li>
-            <li><img src="icone-pay.png" alt="paypall"></li>
-            <li><img src="icone-pix.png" alt="pix"></li>
-            <li><img src="icone-boleto.png" alt="boleto"></li>
+            <li>
+                <img src="icone-card.png" alt="Cartão de Crédito">
+                <span>Cartão</span> </li>
+            <li>
+                <img src="icone-pay.png" alt="PayPal">
+                <span>PayPal</span>
+            </li>
+            <li>
+                <img src="icone-pix.png" alt="Pix">
+                <span>Pix</span>
+            </li>
+            <li>
+                <img src="icone-boleto.png" alt="Boleto">
+                <span>Boleto</span>
+            </li>
         </ul>
     </div>
 
-    <!-- Segundo Formulário começa propriamente dito aqui -->
-
-    <section class="container-form2">
+    <section class="container-form">
 
         <div class="second-form">
             <form action="">
-                <div class="form-field2">
-                    <label for="nome-cartao">Nome impresso no cartão:</label>
-                    <input type="text" id="nome-cartao" name="nome-cartao" required>
-                </div>
-                <div class="form-field2" style="flex: 0.5;">
-                    <label for="numero-cartao">Número do cartão:</label>
-                    <input type="text" id="numero-cartao" name="numero-cartao" required>
-                </div>
-        
-                <div class="container-num" style="flex: 0.7;">
-                    <div class="form-field2">
-                        <label for="validade-cartao">Validade:</label>
-                        <input type="text" id="validade-cartao" class="little-input" name="validade-cartao" required>
-                    </div>
-                    <div class="form-field2">
-                        <label for="codigo-seguranca">Código de segurança:</label>
-                        <input type="text" id="codigo-seguranca" class="little-input2" name="codigo-seguranca" required>
-                    </div>
-                </div>
-            </form>
-        </div>
+                <div class="form-field">
+                    <label for="nomeImpressoCartao">Nome impresso no cartão:</label> <input type="text" id="nomeImpressoCartao" name="nome-cartao"  required> </div>
 
-        <div class="btns">
-            <div class="container-btn">
-                <a href="#" class="btn-before">Anterior</a>
-            </div>
-            <div class="container-btn">
-                <a href="#" class="btn-buy">Finalizar compra</a>
+                <div class="form-field">
+                    <label for="numeroDoCartao">Número do cartão:</label> <input type="tel" id="numeroDoCartao" name="numero-cartao" placeholder="0000 0000 0000 0000" required> </div>
+        
+                <div class="form-field">
+                    <label for="validadeDoCartao">Validade:</label> <input type="text" id="validadeDoCartao" name="validade-cartao" placeholder="00/00" required> </div>
+
+                <div class="form-field">
+                    <label for="codigoSegurancaCartao">Código de segurança:</label> <input type="password" id="codigoSegurancaCartao"  name="codigo-seguranca" required> </div>
+        
+            </form>
+
+            <div class="btns">
+                <div class="container-btn2">
+                    <a href="#" class="btn-before">Anterior</a>
+                </div>
+                <div class="container-btn2">
+                    <a href="#" class="btn-buy">Comprar</a>
+                </div>
             </div>
         </div>
 
     </section>
 </section>
-
         <!--Footer-->
     
         <div class="detalhe-flor">
